@@ -25,7 +25,7 @@ SECRET_KEY = '8^mkv@$w1mhqhbf85_hv4om94by$-d347149%vp$w0t(afc869'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sen-backend.herokuapp.com','127.0.0.1']
 
 
 # Application definition
