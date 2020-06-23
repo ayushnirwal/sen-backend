@@ -60,7 +60,6 @@ def login(request):
 def logout(request):
     if request.method == "POST":
         token = json.loads(request.body)["token"]
-        print(token)
         token_objs = ValidTokens.objects.filter(token = token)
         
         if token_objs.exists():
@@ -69,12 +68,10 @@ def logout(request):
             data = {
                 "msg":"logged out"
             }
-            print("logged out")
         else:
             data = {
                 "msg":"invalid token"
             }
-            print("invalid token")
 
         return JsonResponse(data)
 
@@ -90,7 +87,6 @@ def getCourseList(request):
             user_obj = token_objs[0].user_obj
             course_str = Prof.objects.filter(user_obj = user_obj)[0].courses 
             courses = course_str.split(",")
-            print (courses)
 
             data = {
                 "courses":courses
@@ -190,7 +186,7 @@ def delLecInstance(request):
             data = {
                 "msg":"invalid token"
             }
-        print(data)
+
         return JsonResponse(data)
 
 
@@ -289,7 +285,6 @@ def getStats(request):
             
             
             
-            print(data)
             
             
         else:
