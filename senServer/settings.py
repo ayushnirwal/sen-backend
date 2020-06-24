@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8^mkv@$w1mhqhbf85_hv4om94by$-d347149%vp$w0t(afc869'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['sen-backend.herokuapp.com','127.0.0.1']
 
@@ -105,8 +105,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangop
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage''
 
 TIME_ZONE = 'UTC'
 
@@ -124,9 +122,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 
 CORS_ORIGIN_ALLOW_ALL=True
