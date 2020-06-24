@@ -6,8 +6,6 @@ urlpatterns = [
     path('login', views.login),
     path('logout', views.logout),
     path('getCourseList', views.getCourseList),
-    # path('createLecInstance', views.createLecInstance),
-    # path('delLecInstance', views.delLecInstance),
-    # path('getQR', views.getQR),
-    # path('getStats', views.getStats),
+    path('markMe', views.markMe),
+    path('getStats', views.getStats),
 ]
