@@ -21,3 +21,4 @@ urlpatterns = [
     path('prof/', include("prof.urls")),
     path('stu/', include("stu.urls")),
 ]
+
