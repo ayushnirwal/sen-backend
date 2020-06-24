@@ -149,7 +149,7 @@ def getStats(request):
 
         if token_objs.exists():
             user_obj = token_objs[0].user_obj
-            course_str = Prof.objects.filter(user_obj = user_obj)[0].courses 
+            course_str = Student.objects.filter(user_obj = user_obj)[0].courses 
             courses = course_str.split(",")
 
             if course in courses:
