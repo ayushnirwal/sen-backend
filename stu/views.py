@@ -131,12 +131,13 @@ def markMe(request):
                     AttRec.save() 
 
                     data = {
-                        "msg":"Already Marked"
+                        "msg":"Marked"
                     }
 
                 else:
                     data = {
-                        "msg":"Marked"
+                        
+                        "msg":"Already Marked"
                     }
 
             else : 
