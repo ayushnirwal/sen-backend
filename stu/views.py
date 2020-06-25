@@ -121,7 +121,7 @@ def markMe(request):
 
                 data = QR.split("_")
 
-                if not AttendanceRecord(studentID = studentID , course = data[0], lecID = data[1]).exists()
+                if not AttendanceRecord(studentID = studentID , course = data[0], lecID = data[1]).exists():
 
                     AttRec = AttendanceRecord()
                     AttRec.studentID = studentID
