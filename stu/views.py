@@ -121,15 +121,23 @@ def markMe(request):
 
                 data = QR.split("_")
 
-                AttRec = AttendanceRecord()
-                AttRec.studentID = studentID
-                AttRec.course = data[0]
-                AttRec.lecID = data[1]
-                AttRec.save() 
+                if not AttendanceRecord(studentID = studentID , course = data[0], lecID = data[1]).exists()
 
-                data = {
-                "msg":"Marked",
-            }
+                    AttRec = AttendanceRecord()
+                    AttRec.studentID = studentID
+                    AttRec.course = data[0]
+                    AttRec.lecID = data[1]
+                    
+                    AttRec.save() 
+
+                    data = {
+                        "msg":"Already Marked"
+                    }
+
+                else:
+                    data = {
+                        "msg":"Marked"
+                    }
 
             else : 
                 data = {
