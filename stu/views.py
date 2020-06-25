@@ -114,6 +114,7 @@ def markMe(request):
             # index   0->course   1->lec_hash   2->code in data
             
             # check code
+            data = QR.split("_")
             if Code.objects.filter(code = QR).exists():
 
                 studentID = token_objs[0].user_obj.username
