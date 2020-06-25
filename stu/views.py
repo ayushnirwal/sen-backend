@@ -127,7 +127,6 @@ def markMe(request):
             else : 
                 data = {
                 "msg":"invalid QR",
-                "data":QR
             }
 
         else:
