@@ -114,16 +114,22 @@ def markMe(request):
             # index   0->course   1->lec_hash   2->code in data
             
             # check code
-            data = QR.split("_")
+            
             if Code.objects.filter(code = QR).exists():
 
                 studentID = token_objs[0].user_obj.username
+
+                data = QR.split("_")
 
                 AttRec = AttendanceRecord()
                 AttRec.studentID = studentID
                 AttRec.course = data[0]
                 AttRec.lecID = data[1]
                 AttRec.save() 
+
+                data = {
+                "msg":"Marked",
+            }
 
             else : 
                 data = {
