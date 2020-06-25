@@ -112,9 +112,9 @@ def markMe(request):
         if token_objs.exists():
             # splice QR into course,lec_hash and code 
             # index   0->course   1->lec_hash   2->code in data
-            data = QR.split("_")
+            
             # check code
-            if Code.objects.filter(code = data[2]).exists():
+            if Code.objects.filter(code = QR).exists():
 
                 studentID = token_objs[0].user_obj.username
 
@@ -126,7 +126,8 @@ def markMe(request):
 
             else : 
                 data = {
-                "msg":"invalid QR"
+                "msg":"invalid QR",
+                "data":QR
             }
 
         else:
