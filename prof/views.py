@@ -215,7 +215,7 @@ def getQR(request):
                 if Code.objects.filter(course = course).exists():
                     Code.objects.filter( course = course )[0].delete()
 
-                qr = str(course) +"_"+ str(lec_hash) + "_" + str(hash (str(token) + str(course) + str(lec_hash))%1000000000)
+                qr = str(course) +"_"+ str(lec_hash) + "_" + str(hash (str(token) + str(course) + str(lec_hash) + str( datetime.now() ))%1000000000)
 
                 data = {
                     "qr": qr
